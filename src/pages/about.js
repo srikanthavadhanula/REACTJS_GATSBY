@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import HeroSection from "../components/Reusable/HeroSection"
 import Infoblock from "../components/Reusable/infoblock"
 import DualInfoBlock from "../components/Reusable/DualInfoBlock"
-import staffPic from "../images/srikanth.jpg"
+import staffPic from "../images/contentFul/django.png"
 
 const AboutPage = ({data}) => (
   <Layout>
