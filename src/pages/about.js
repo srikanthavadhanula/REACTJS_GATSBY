@@ -7,54 +7,34 @@ import HeroSection from "../components/Reusable/HeroSection"
 import Infoblock from "../components/Reusable/infoblock"
 import DualInfoBlock from "../components/Reusable/DualInfoBlock"
 import staffPic from "../images/srikanth.jpg"
-import Coursecart from "../components/Cart/Coursecart"
 
-const IndexPage = ({data}) => (
+const AboutPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
     <HeroSection 
     img = {data.img.childImageSharp.fluid}
-    title = "I Write Code"
-    subtitle = "LearnCodeOnline.in"
-    heroClass = "hero-background"
+    title = "About Learn Code Online"
+    subtitle = ""
+    heroClass = "about-background"
     />
-    <Infoblock heading="About Us"/>
-    <Coursecart courses={data.course}/>
     <DualInfoBlock 
-    heading = "Our Team"
+    heading = "Message From CEO"
     staff = {staffPic}
     />
+    <Infoblock heading="About Vision"/>
   </Layout>
 )
 
 export const query = graphql`
 {
-  img: file(relativePath: { eq: "heromain.png" }) {
+  img: file(relativePath: { eq: "about.png" }) {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }
   }
-  course :allContentfulCourses{
-    edges{
-      node{
-        id
-        title
-        price
-        category
-        description {
-          description
-        }
-        image {
-          fixed(width:200,height:120){
-            ...GatsbyContentfulFixed_tracedSVG
-          }
-        }
-      }
-    }
-  }
 }
 `
 
-export default IndexPage
+export default AboutPage
